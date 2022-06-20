@@ -1,10 +1,12 @@
 <?php
-$fruits = ["apple" =>"りんご", "orange" => "みかん", "peach" => "もも"];
+$myname = "ruby";
 
-foreach ($fruits as $key => $value) {
-    echo $key;
-    echo "といったら";
-    echo $value;
-    echo "<br>";
+function sayHi($name = "goto") {
+    // 関数の中で定義する変数 => ローカル変数
+    $myname = "php";
+    return "Hi! ".$name." from ".$myname;
 }
+
+echo sayHi();
+echo $myname;
 ?>
