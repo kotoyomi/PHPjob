@@ -1,5 +1,5 @@
 <?php
-//keyに単価を入れる
+//key=種類、value=単価
 $price = ["りんご" => "150","みかん" => "150","桃" => "300"];
 
 foreach($price as $key => $value) {
@@ -10,19 +10,20 @@ echo "<br>";
 
 function totalamount($price, $number) {
   $total = $price * $number;
-  print "${total}円です。<br>";
-
-  /*
-  foreach($price as $key) {
-    echo "${key}は${total}円です。<br>";
-  } */
+  return "${total}";
 }
 
-  //りんご 
-  totalamount($price["りんご"],2);
-  //みかん 
-  totalamount($price["みかん"],1);
-  //桃 
-  totalamount($price["桃"],10);
+foreach($price as $key => $value) {
+  if($key == "りんご") {
+  $total = totalamount($value,2);
+  echo "${key}は${total}円です。<br>";
+  } elseif($key == "みかん") {
+    $total = totalamount($value,1);
+    echo "${key}は${total}円です。<br>";
+  } elseif($key == "桃") {
+    $total = totalamount($value,10);
+    echo "${key}は${total}円です。<br>";
+  } 
+}
 
 ?>
